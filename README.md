@@ -1,2 +1,2 @@
 # Calculadora-Banco-de-Horas
-Programa que permite realizar o cálculo de banco de horas.
+Programa que permite realizar o cálculo de banco de horas. Novas funções serão adicionadas no futuro, como cáculo do banco de horas em um determinado período de 30 dias, para que o funcionário também tenha controle dessas informações de forma precisa, além de que será implementada também uma visualização e utilização mais amigável, provavelmente por meio do framework web Django.
