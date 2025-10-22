@@ -223,11 +223,11 @@ def menu_principal():
     while True:
         exibir_menu_principal()
         opcao = int(input("\nEscolha uma opção: \n"))
-        if opcao == "1":
+        if opcao == 1:
             menu_usuarios()
-        elif opcao == "2":
+        elif opcao == 2:
             menu_pontos()
-        elif opcao == "3":
+        elif opcao == 3:
             print("Saindo...")
             break
 
@@ -237,24 +237,24 @@ def menu_usuarios():
 
         exibir_submenu_usuarios()
         opcao = int(input("\nEscolha uma opção: \n"))
-        if opcao == "1":
+        if opcao == 1:
             cadastrar_usuario()
-        elif opcao == "2":
+        elif opcao == 2:
             buscar_usuario()
-        elif opcao == "3":
+        elif opcao == 3:
             listar_usuarios()
-        elif opcao == "4":
+        elif opcao == 4:
             break
 
 def menu_pontos():
     while True:
         exibir_submenu_pontos()
         opcao = int(input("\nEscolha uma opção: \n"))
-        if opcao == "1":
+        if opcao == 1:
             cadastrar_pontos()
-        elif opcao == "2":
+        elif opcao == 2:
             print("gerar_relatorio(em implementeção)")
-        elif opcao == "3":
+        elif opcao == 3:
             break
 
 if __name__ == "__main__":
