@@ -1,9 +1,71 @@
 import sqlite3
-
 from datetime import datetime, timedelta
+from ttkbootstrap import Style
+from tkinter import ttk
+import tkinter as tk
 
 
+style = Style(theme="solar")
 
+#menu principal
+menu_principal = style.master
+menu_principal.title("Calculadora BH")
+menu_principal.geometry("300x350")
+
+#widgets
+label = ttk.Label(menu_principal, text="---Menu Principal---")
+label.pack(pady=10)
+
+botao_principal1=ttk.Button(menu_principal, text="Controle de Usuários")
+botao_principal1.pack(pady=10)
+
+botao_principal2 = ttk.Button(menu_principal, text="Controle de Pontos")
+botao_principal2.pack(pady=10)
+
+botao_principal3 = ttk.Button(menu_principal, text="Sair")
+botao_principal3.pack(pady=10)
+
+#menu usuarios
+controle_usuarios = tk.Tk()
+controle_usuarios.title("Calculadora BH")
+controle_usuarios.geometry("300x350")
+controle_usuarios.configure(bg="#3b3b3b")
+
+#widgets usuarios
+
+label_usuarios=ttk.Label(controle_usuarios, text="---Menu de Usuários---")
+label_usuarios.pack(pady=10)
+
+botao_usuarios1=ttk.Button(controle_usuarios, text="Cadastrar Usuários",)
+botao_usuarios1.pack(pady=10)
+
+botao_usuarios2=ttk.Button(controle_usuarios, text="Pesquisar Usuário")
+botao_usuarios2.pack(pady=10)
+
+botao_usuarios3=ttk.Button(controle_usuarios, text="Listar todos os Usuários")
+botao_usuarios3.pack(pady=10)
+
+botao_usuarios4=ttk.Button(controle_usuarios, text="Voltar")
+botao_usuarios4.pack(pady=10)
+
+#menu pontos
+controle_pontos = tk.Tk()
+controle_pontos.title("Calculadora BH")
+controle_pontos.geometry("300x350")
+controle_pontos.configure(bg="#3b3b3b")
+
+#widgets pontos
+label_pontos=ttk.Label(controle_pontos, text="---Controle de Pontos---")
+label_pontos.pack(pady=10)
+
+botao_pontos1=ttk.Button(controle_pontos, text="Cadastrar Ponto")
+botao_pontos1.pack(pady=10)
+
+botao_pontos2=ttk.Button(controle_pontos, text="Gerar Relatorio")
+botao_pontos2.pack(pady=10)
+
+botao_pontos3=ttk.Button(controle_pontos, text="Voltar")
+botao_pontos3.pack(pady=10)
 #tabelas
 
 def get_connection():
@@ -42,6 +104,10 @@ def inicializar_db():
 
 #funções
 
+#criar menu moderno
+def modern_app():
+    menu_principal = ttk.Window(themename="elegance")
+    menu_principal.title("Calculadora BH")
 #listar usuarios cadastrados
 
 def listar_usuarios():
@@ -193,16 +259,16 @@ def buscar_usuario():
 #menu estruturado
 def exibir_menu_principal():
     print("\n---Menu Principal---\n")
-    print("1. Controle de Usuários")
-    print("2. Controle de Pontos")
-    print("3. Encerrar")
+    print("[1]. Controle de Usuários")
+    print("[2]. Controle de Pontos")
+    print("[3]. Encerrar")
 
 def exibir_submenu_usuarios():
     print("\n---Menu de Usuários---\n")
-    print("1. Cadastrar Usuário")
-    print("2. Pesquisar usuário")
-    print("3. Listar todos os usuários")
-    print("4. Voltar")
+    print("[1]. Cadastrar Usuário")
+    print("[2]. Pesquisar usuário")
+    print("[3]. Listar todos os usuários")
+    print("[4]. Voltar")
 
 def exibir_submenu_pesquisa():
 
@@ -214,9 +280,9 @@ def exibir_submenu__listar():
 
 def exibir_submenu_pontos():
     print("\n---Controle de Pontos---\n")
-    print("1. Cadastrar ponto")
-    print("2. Gerar relatório periódico")
-    print("3. Voltar")
+    print("[1]. Cadastrar ponto")
+    print("[2]. Gerar relatório periódico")
+    print("[3]. Voltar")
 
 
 def menu_principal():
@@ -260,3 +326,4 @@ def menu_pontos():
 if __name__ == "__main__":
     inicializar_db()
     menu_principal()
+    menu_principal.mainloop()
